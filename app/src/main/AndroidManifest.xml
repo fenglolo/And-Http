@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="feng.http.com">
+
+    <!-- 外部存储读写权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 拍照权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 联网权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--获取手机设备号-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <application
+        android:name="feng.http.com.application.AppApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.http.OkhttpActivity"/>
+        <activity android:name=".activity.http.HttpActivity"/>
+        <activity android:name=".activity.sql.SqlActivity"/>
+
+    </application>
+
+</manifest>
