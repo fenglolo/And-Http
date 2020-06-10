@@ -9,10 +9,11 @@ import android.widget.Button;
 import feng.http.com.R;
 import feng.http.com.activity.http.HttpActivity;
 import feng.http.com.activity.http.OkhttpActivity;
+import feng.http.com.activity.sql.SqlActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
-    private Button btn_get,btn_okhttp;
+    private Button btn_get,btn_okhttp,btn_sqlite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +27,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
     private void initView(){
         btn_get = findViewById(R.id.btn_get);
         btn_okhttp = findViewById(R.id.btn_okhttp);
+        btn_sqlite = findViewById(R.id.btn_sqlite);
     }
 
     private void initAction(){
         btn_get.setOnClickListener(this);
         btn_okhttp.setOnClickListener(this);
+        btn_sqlite.setOnClickListener(this);
     }
 
     @Override
@@ -41,6 +44,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.btn_okhttp://OkHttp
                 startActivity(new Intent(MainActivity.this,OkhttpActivity.class));
+                break;
+            case R.id.btn_sqlite://sqlite
+                startActivity(new Intent(MainActivity.this,SqlActivity.class));
                 break;
             default:
                 break;
